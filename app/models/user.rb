@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   enum city: { hcm: 'HCM', hn: 'HN', dn: 'DN', other: 'Other' }
   enum subscribe_status: { subscribed: 0, unsubscribed: 1 }
 
-  def exists?(status, city)
-    pluck(:status, :city).count{|user| user.status == status && user.city == city} > 0
+  # We should change the name method because it gets confused with the method exists? of ActiveRecord
+  def exists_by_status_city?(status, city)
+    User.exists?(status: status, city: city)
   end
 
   def self.bad_sol
