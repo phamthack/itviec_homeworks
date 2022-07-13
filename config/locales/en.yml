@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  messages:
+    unsubscribed:
+      user_not_exist: User do not exist!
+      already_unsubscribed: You already unsubscribed!
+      link_expired: Unsubscribed link invalid!
+      unsubscribe_successfully: 'You unsubscribe successfully!'
